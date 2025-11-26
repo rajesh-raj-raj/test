@@ -28,14 +28,11 @@ This document explains **how all of this works internally.**
 ## Architecture
 
 ```
-User Input → Debounced Search → TMDB API Fetch → UI Updates
-                                 ↓
-                         Appwrite Database
-                         (store search count)
-                                 ↓
-                         Trending Movies Fetch
-                                 ↓
-                               UI Render
+User Input → Debounced Search → TMDB API → UI Updates
+                    ↓
+              Appwrite Database
+                    ↓
+            Trending Movies → UI Render
 ```
 
 Each part is broken down in detail below.
