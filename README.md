@@ -6,7 +6,7 @@ It is designed for GitHub use so anyone reading your repo can understand the ful
 
 ---
 
-# 📌 1. Project Summary
+## 📌 1. Project Summary
 
 React Movies is a **real-world movie explorer application** built with:
 
@@ -25,7 +25,7 @@ This document explains **how all of this works internally.**
 
 ---
 
-# 📌 2. High-Level Architecture
+## 📌 2. High-Level Architecture
 
 ```
 User Input → Debounced Search → TMDB API Fetch → UI Updates
@@ -42,7 +42,7 @@ Each part is broken down in detail below.
 
 ---
 
-# 📌 3. Application Startup Flow
+## 📌 3. Application Startup Flow
 
 When the app loads:
 
@@ -63,7 +63,7 @@ This creates the home page with:
 
 ---
 
-# 📌 4. Component Structure Flow
+## 📌 4. Component Structure Flow
 
 ```
 App.jsx
@@ -80,7 +80,7 @@ App.jsx
 
 ---
 
-# 📌 5. TMDB API Flow (Fetching Movies)
+## 📌 5. TMDB API Flow (Fetching Movies)
 
 ### Step-by-step:
 
@@ -102,11 +102,11 @@ App.jsx
 
 ### Result:
 
-Movies appear on UI in the “All Movies” section.
+Movies appear on UI in the "All Movies" section.
 
 ---
 
-# 📌 6. Search Workflow (step-by-step)
+## 📌 6. Search Workflow (step-by-step)
 
 User types in the search box:
 
@@ -127,18 +127,18 @@ Input → onChange → setSearchTerm → Debounce → TMDB API → Results Displ
 Without debounce:
 
 ```
-Typing “Avengers” = 8 API calls
+Typing "Avengers" = 8 API calls
 ```
 
 With debounce:
 
 ```
-Typing “Avengers” = 1 API call
+Typing "Avengers" = 1 API call
 ```
 
 ---
 
-# 📌 7. Appwrite Backend Workflow (Trending System)
+## 📌 7. Appwrite Backend Workflow (Trending System)
 
 This is the intelligent system that tracks which movies are searched most.
 
@@ -169,7 +169,7 @@ This permanently stores search popularity.
 
 ---
 
-# 📌 8. Fetching Trending Movies
+## 📌 8. Fetching Trending Movies
 
 A second function `getTrendingMovies()` is used:
 
@@ -189,7 +189,7 @@ It updates in real-time as searches increase.
 
 ---
 
-# 📌 9. Rendering Logic Flow
+## 📌 9. Rendering Logic Flow
 
 React decides what to render based on:
 
@@ -209,7 +209,7 @@ React decides what to render based on:
 
 ---
 
-# 📌 10. Deployment Workflow
+## 📌 10. Deployment Workflow
 
 1. Build project:
 
@@ -227,7 +227,7 @@ React decides what to render based on:
 
 ---
 
-# 📌 11. Full Workflow Summary (1-page)
+## 📌 11. Full Workflow Summary (1-page)
 
 ```
 STEP 1: App loads → Fetch all movies → Display UI
@@ -246,7 +246,7 @@ This is the entire system end‑to‑end.
 
 ---
 
-# 📌 12. Why This Project Is Real‑World Useful
+## 📌 12. Why This Project Is Real‑World Useful
 
 This project demonstrates:
 
@@ -262,23 +262,9 @@ You can showcase this on your resume or portfolio.
 
 ---
 
-# 📌 13. Want More Improvements?
+## 🗺️ Architecture Flow Diagram
 
-I can also add:
-✅ Flow diagrams (ASCII or generated)
-✅ Comments inside code
-✅ A separate `ARCHITECTURE.md` file
-✅ A shorter README version
-
-Just tell me what you need next! 🚀
-
----
-
-# 🗺️ Architecture Flow Diagram
-
-Below are two representations of the system architecture: a human-friendly ASCII flow (works everywhere) and a Mermaid diagram (useful if GitHub renders Mermaid in your README). Use whichever fits your repo.
-
-## 1) ASCII Diagram (copy into README)
+### ASCII Diagram
 
 ```
 User
@@ -314,51 +300,7 @@ Finally:
 Static hosting (build -> /dist) -> Hostinger / Vercel / Netlify (env vars set)
 ```
 
-## 2) Mermaid Diagram (paste in README if supported)
-
-```mermaid
-flowchart TD
-  U[User]
-  S[Search component
-(Search.jsx)]
-  D[Debounce
-(useDebounce)]
-  A[App.jsx
-(state + effects)]
-  TMDB[TMDB API]
-  AW[Appwrite DB]
-  TM[List: movieList]
-  TR[List: trendingMovies]
-  HOST[Hosting
-(Vercel/Netlify/Hostinger)]
-
-  U --> S
-  S --> D
-  D --> A
-  A -->|search API| TMDB
-  TMDB --> A
-  A -->|updateSearchCount| AW
-  AW --> A
-  A --> TM
-  A --> TR
-  A --> HOST
-
-  style A fill:#fef3c7,stroke:#f59e0b
-  style TMDB fill:#e0f2fe,stroke:#0369a1
-  style AW fill:#ecfdf5,stroke:#0891b2
-  style HOST fill:#eef2ff,stroke:#7c3aed
-```
-
-### Notes on using the Mermaid diagram
-
-* GitHub now supports Mermaid in markdown for many repositories; if it doesn't render in your repo, keep the ASCII diagram instead.
-* If you want a PNG/SVG export of the Mermaid diagram I can generate a PNG version (and add a link or file to the repo). Tell me which format you prefer.
-
----
-
-*Diagram appended.*
-
-## Project Flowchart
+### Project Flowchart
 
 ```mermaid
 flowchart TD
@@ -377,3 +319,19 @@ flowchart TD
     I --> K[Update Search Count in Appwrite]
     K --> C[Trending List Updates]
 ```
+
+---
+
+## 🚀 Getting Started
+
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Set up environment variables in `.env.local`
+4. Run development server: `npm run dev`
+5. Build for production: `npm run build`
+
+---
+
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).
