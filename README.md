@@ -6,7 +6,7 @@ It is designed for GitHub use so anyone reading your repo can understand the ful
 
 ---
 
-## 📌 1. Project Summary
+## Project Summary
 
 React Movies is a **real-world movie explorer application** built with:
 
@@ -25,7 +25,7 @@ This document explains **how all of this works internally.**
 
 ---
 
-## 📌 2. High-Level Architecture
+## Architecture
 
 ```
 User Input → Debounced Search → TMDB API Fetch → UI Updates
@@ -42,7 +42,7 @@ Each part is broken down in detail below.
 
 ---
 
-## 📌 3. Application Startup Flow
+## Application Startup Flow
 
 When the app loads:
 
@@ -63,7 +63,7 @@ This creates the home page with:
 
 ---
 
-## 📌 4. Component Structure Flow
+## Component Structure
 
 ```
 App.jsx
@@ -80,7 +80,7 @@ App.jsx
 
 ---
 
-## 📌 5. TMDB API Flow (Fetching Movies)
+## TMDB API Integration
 
 ### Step-by-step:
 
@@ -106,7 +106,7 @@ Movies appear on UI in the "All Movies" section.
 
 ---
 
-## 📌 6. Search Workflow (step-by-step)
+## Search Workflow
 
 User types in the search box:
 
@@ -138,7 +138,7 @@ Typing "Avengers" = 1 API call
 
 ---
 
-## 📌 7. Appwrite Backend Workflow (Trending System)
+## Appwrite Backend (Trending System)
 
 This is the intelligent system that tracks which movies are searched most.
 
@@ -169,7 +169,7 @@ This permanently stores search popularity.
 
 ---
 
-## 📌 8. Fetching Trending Movies
+## Fetching Trending Movies
 
 A second function `getTrendingMovies()` is used:
 
@@ -189,7 +189,7 @@ It updates in real-time as searches increase.
 
 ---
 
-## 📌 9. Rendering Logic Flow
+## Rendering Logic
 
 React decides what to render based on:
 
@@ -209,7 +209,7 @@ React decides what to render based on:
 
 ---
 
-## 📌 10. Deployment Workflow
+## Deployment
 
 1. Build project:
 
@@ -227,7 +227,7 @@ React decides what to render based on:
 
 ---
 
-## 📌 11. Full Workflow Summary (1-page)
+## Complete Workflow
 
 ```
 STEP 1: App loads → Fetch all movies → Display UI
@@ -246,7 +246,7 @@ This is the entire system end‑to‑end.
 
 ---
 
-## 📌 12. Why This Project Is Real‑World Useful
+## Real-World Applications
 
 This project demonstrates:
 
@@ -262,7 +262,7 @@ You can showcase this on your resume or portfolio.
 
 ---
 
-## 🗺️ Architecture Flow Diagram
+## System Architecture Diagrams
 
 ### ASCII Diagram
 
@@ -322,7 +322,7 @@ flowchart TD
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 1. Clone the repository
 2. Install dependencies: `npm install`
@@ -332,6 +332,6 @@ flowchart TD
 
 ---
 
-## 📝 License
+## License
 
 This project is open source and available under the [MIT License](LICENSE).
