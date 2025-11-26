@@ -321,7 +321,11 @@ Return a list of available listings that match user criteria (location, dates, g
 
 `GET /search?q=:location&checkIn=YYYY-MM-DD&checkOut=YYYY-MM-DD&guests=2&page=1`
 
-### 1. Route definition (Express)
+### 1. Route defi# Booking System API Documentation
+
+## Search Implementation
+
+### 1. Route Definition (Express)
 
 ```js
 router.get('/search', validateInput(searchSchema), searchController.search);
@@ -563,10 +567,37 @@ exports.createBooking = async (req, res) => {
 
 ---
 
-If you'd like, I can now:
+## Getting Started
 
-* Insert these expanded flows into the project docs file in the repo (README or a new `BOOKING_FLOW.md`) — ready to commit, or
-* Generate sequence diagrams (Mermaid) for the booking transaction and search flow, or
-* Produce test cases (Jest) to validate concurrency and availability checks.
+1. **Clone Repository**
+   ```bash
+   git clone <repository-url>
+   cd booking-system
+   ```
 
-Which of those would you like next?
+2. **Install Dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Environment Setup**
+   ```bash
+   cp .env.example .env
+   # Edit .env with your configuration
+   ```
+
+4. **Start Development Server**
+   ```bash
+   npm run dev
+   ```
+
+5. **Run Tests**
+   ```bash
+   npm test
+   ```
+
+---
+
+## License
+
+This project is licensed under the MIT License.
